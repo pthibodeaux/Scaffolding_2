@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "./src/CRM/Web/node_modules/typescript/lib",
+  "editor.tabSize": 2,
+  "[csharp]": {
+    "editor.tabSize": 4
+  },
+  //"editor.formatOnSave": true,
+  "scss.lint.important": "error",
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.idSelector": "warning",
+  "scss.lint.ieHack": "warning",
+  "scss.lint.universalSelector": "warning",
+  "tslint.autoFixOnSave": true,
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "prettier.singleQuote": true
+}

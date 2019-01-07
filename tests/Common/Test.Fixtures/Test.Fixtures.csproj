@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+	<AssemblyName>Common.TestFixtures</AssemblyName>
+	<RootNamespace>Common.TestFixtures</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\CRM\Core\Core.csproj" />
+  </ItemGroup>
+
+</Project>

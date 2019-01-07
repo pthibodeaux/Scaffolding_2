@@ -1,0 +1,71 @@
+{
+   // Use IntelliSense to find out which attributes exist for C# debugging
+   // Use hover for the description of the existing attributes
+   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+   "version": "0.2.0",
+   "configurations": [
+    {
+        "name": ".NET Core Debug",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build CRM",
+        "program": "${workspaceRoot}/src/CRM/Web/bin/Debug/netcoreapp2.1/CRM.Web.dll",
+        "args": [],
+        "cwd": "${workspaceRoot}/src/CRM/Web",
+        "stopAtEntry": false,
+        "launchBrowser": {
+            "enabled": false,
+            "args": "${auto-detect-url}",
+            "windows": {
+                "command": "cmd.exe",
+                "args": "/C start ${auto-detect-url}"
+            },
+            "osx": {
+                "command": "open"
+            },
+            "linux": {
+                "command": "xdg-open"
+            }
+        },
+        "env": {
+            // @DEBUG@ - this setting is used when debugging C# in vsCode
+            "ASPNETCORE_ENVIRONMENT": "Local",
+            "ASPNETCORE_URLS": "http://localhost:5010"
+        },
+        "sourceFileMap": {
+            "/Views": "${workspaceRoot}/src/CRM/Web/Views"
+        }
+    },
+    {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch chrome",
+        "url": "http://localhost:5010",
+        "webRoot": "${workspaceRoot}/src/CRM/Web",
+        "sourceMaps": true,
+        "sourceMapPathOverrides": {
+          "webpack:///*": "${workspaceRoot}/*"
+         },
+        "runtimeArgs": [
+            "--remote-debugging-port=9222",
+            "--no-first-run",
+            "--no-first-browser-check",
+            //"--disable-web-security"
+        ]
+    },
+    {
+        "type": "chrome",
+        "request": "attach",
+        "name": "Attach chrome",
+        "port": 9222,
+        "webRoot": "${workspaceRoot}/src/CRM/Web",
+        "sourceMaps": true,
+        "sourceMapPathOverrides": {
+          "webpack:///*": "${workspaceRoot}/*"
+        },
+        //"diagnosticLogging": true,
+        "url": "http://localhost:5010",
+        "smartStep": true
+    }
+]
+}
